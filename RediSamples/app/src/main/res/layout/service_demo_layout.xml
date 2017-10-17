@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/serviceSyncDemoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Start service sync" />
+
+    <Button
+        android:id="@+id/serviceAsyncDemoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_blue_bright"
+        android:text="Start service async" />
+
+    <Button
+        android:id="@+id/intentServiceDemoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="Start Intent service"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
