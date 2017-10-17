@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 
+import com.cesarvaliente.redisamples.intents.IntentsActivity;
 import com.cesarvaliente.redisamples.layouts.LayoutDemoActivity;
 import com.cesarvaliente.redisamples.lifecycle.LifecycleDemoActivityA;
 import com.cesarvaliente.redisamples.recyclerview.RecyclerViewDemoActivity;
@@ -14,10 +15,11 @@ import com.cesarvaliente.redisamples.services.ServiceDemoActivity;
 
 public class MainActivity extends Activity {
 
-    private Button lifecycleAndIntentsDemoBtn;
+    private Button lifecycleDemoBtn;
     private Button layoutsDemoBtn;
-    private Button serviceseDemoBtn;
+    private Button servicesDemoBtn;
     private Button recyclerViewDemoBtn;
+    private Button intentsDemoBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,12 +30,13 @@ public class MainActivity extends Activity {
     }
 
     private void bindButtons() {
-        lifecycleAndIntentsDemoBtn = findViewById(R.id.lifecycleAndIntentsDemoBtn);
+        lifecycleDemoBtn = findViewById(R.id.lifecycleDemoBtn);
         layoutsDemoBtn = findViewById(R.id.layoutsDemo);
-        serviceseDemoBtn = findViewById(R.id.servicesDemoBtn);
+        servicesDemoBtn = findViewById(R.id.servicesDemoBtn);
         recyclerViewDemoBtn = findViewById(R.id.recyclerViewDemoBtn);
+        intentsDemoBtn = findViewById(R.id.intentsDemoBtn);
 
-        lifecycleAndIntentsDemoBtn.setOnClickListener(new View.OnClickListener() {
+        lifecycleDemoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LifecycleDemoActivityA.class);
@@ -47,7 +50,7 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        serviceseDemoBtn.setOnClickListener(new View.OnClickListener() {
+        servicesDemoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ServiceDemoActivity.class);
@@ -59,6 +62,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecyclerViewDemoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        intentsDemoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, IntentsActivity.class);
                 startActivity(intent);
             }
         });
