@@ -20,6 +20,8 @@
         <activity android:name=".layouts.LayoutDemoActivity" />
         <activity android:name=".services.ServiceDemoActivity" />
         <activity android:name=".recyclerview.RecyclerViewDemoActivity" />
+        <activity android:name=".intents.IntentsActivity" />
+        <activity android:name=".intents.ExplicitIntentActivity" />
 
         <service android:name=".services.ServiceDemo" />
         <service android:name=".services.IntentServiceDemo" />

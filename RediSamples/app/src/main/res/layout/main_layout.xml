@@ -5,12 +5,12 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/lifecycleAndIntentsDemoBtn"
+        android:id="@+id/lifecycleDemoBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:color="@android:color/darker_gray"
-        android:text="Lifecycle + Intents demo" />
+        android:text="Lifecycle demo" />
 
     <Button
         android:id="@+id/layoutsDemo"
@@ -35,6 +35,14 @@
         android:layout_margin="10dp"
         android:color="@android:color/darker_gray"
         android:text="Recycler view demo" />
+
+    <Button
+        android:id="@+id/intentsDemoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:color="@android:color/darker_gray"
+        android:text="Intents demo" />
 
 
 </LinearLayout>
