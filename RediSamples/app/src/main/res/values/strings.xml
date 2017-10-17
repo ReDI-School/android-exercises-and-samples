@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RediSamples</string>
+    <string name="lifecycle_to_activity_a">To activity A</string>
+    <string name="lifecycle_text_activity_b">Lifecycle Activity B:</string>
+    <string name="lifecycle_text_activity_a">Lifecycle Activity A:</string>
+    <string name="lifecycle_to_activity_b">To activity B</string>
+</resources>
