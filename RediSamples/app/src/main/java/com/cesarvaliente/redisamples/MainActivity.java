@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.cesarvaliente.redisamples.intents.IntentsActivity;
 import com.cesarvaliente.redisamples.layouts.LayoutDemoActivity;
 import com.cesarvaliente.redisamples.lifecycle.LifecycleDemoActivityA;
+import com.cesarvaliente.redisamples.network.PeopleActivity;
 import com.cesarvaliente.redisamples.recyclerview.RecyclerViewDemoActivity;
 import com.cesarvaliente.redisamples.services.ServiceDemoActivity;
 
@@ -20,6 +21,7 @@ public class MainActivity extends Activity {
     private Button servicesDemoBtn;
     private Button recyclerViewDemoBtn;
     private Button intentsDemoBtn;
+    private Button networkDemoBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends Activity {
         servicesDemoBtn = findViewById(R.id.servicesDemoBtn);
         recyclerViewDemoBtn = findViewById(R.id.recyclerViewDemoBtn);
         intentsDemoBtn = findViewById(R.id.intentsDemoBtn);
+        networkDemoBtn = findViewById(R.id.networkDemoBtn);
 
         lifecycleDemoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +73,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, IntentsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        networkDemoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PeopleActivity.class);
                 startActivity(intent);
             }
         });
