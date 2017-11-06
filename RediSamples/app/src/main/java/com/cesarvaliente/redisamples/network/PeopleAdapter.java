@@ -11,10 +11,17 @@ import android.widget.TextView;
 import com.cesarvaliente.redisamples.R;
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder> {
-    private List<Creature> people;
 
-    public PeopleAdapter(List<Creature> people) {
+    public interface OnItemClickListener {
+        void onClick(Creature creature);
+    }
+
+    private List<Creature> people;
+    private final OnItemClickListener onItemClickListener;
+
+    public PeopleAdapter(List<Creature> people, OnItemClickListener onItemClickListener) {
         this.people = people;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -28,10 +35,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Creature creature = people.get(position);
-        holder.name.setText(creature.name);
-        holder.eyeColor.setText(creature.eyeColor);
-        holder.gender.setText(creature.gender);
-        holder.height.setText(creature.height);
+        holder.bind(creature, onItemClickListener);
     }
 
     @Override
@@ -39,18 +43,29 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
         return people.size();
     }
 
+    public void setAll(List<Creature> people) {
+        this.people = people;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView name;
-        public TextView eyeColor;
-        public TextView gender;
-        public TextView height;
+        private TextView name;
 
         public ViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.name);
-            eyeColor = view.findViewById(R.id.eyeColor);
-            gender = view.findViewById(R.id.gender);
-            height = view.findViewById(R.id.height);
+        }
+
+        public void bind(final Creature creature,
+                         final OnItemClickListener onItemClickListener) {
+
+            name.setText(creature.name);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClickListener.onClick(creature);
+                }
+            });
         }
     }
 }
