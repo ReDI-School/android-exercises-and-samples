@@ -44,5 +44,13 @@
         android:color="@android:color/darker_gray"
         android:text="Intents demo" />
 
+    <Button
+        android:id="@+id/networkDemoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:color="@android:color/darker_gray"
+        android:text="Network demo" />
+
 
 </LinearLayout>

@@ -4,4 +4,8 @@
     <string name="lifecycle_text_activity_b">Lifecycle Activity B:</string>
     <string name="lifecycle_text_activity_a">Lifecycle Activity A:</string>
     <string name="lifecycle_to_activity_b">To activity B</string>
+    <string name="network_people_eye_color">Eye color: %1$s</string>
+    <string name="network_people_height">Height: %1$s</string>
+    <string name="network_people_gender">Gender: %1$s</string>
+    <string name="network_pages">Page %1$d of %2$d</string>
 </resources>
