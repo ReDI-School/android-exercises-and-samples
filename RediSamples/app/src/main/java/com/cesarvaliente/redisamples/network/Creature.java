@@ -30,9 +30,12 @@ package com.cesarvaliente.redisamples.network;
 
 import java.util.List;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.squareup.moshi.Json;
 
-public class Creature {
+public class Creature implements Parcelable{
 
     @Json(name = "birth_year")
     String birthYear;
@@ -57,6 +60,62 @@ public class Creature {
     List<String> starships;
     String url;
     List<String> vehicles;
+
+    protected Creature(Parcel in) {
+        birthYear = in.readString();
+        created = in.readString();
+        edited = in.readString();
+        eyeColor = in.readString();
+        films = in.createStringArrayList();
+        gender = in.readString();
+        hairColor = in.readString();
+        height = in.readString();
+        homeworld = in.readString();
+        mass = in.readString();
+        name = in.readString();
+        skinColor = in.readString();
+        species = in.createStringArrayList();
+        starships = in.createStringArrayList();
+        url = in.readString();
+        vehicles = in.createStringArrayList();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(birthYear);
+        dest.writeString(created);
+        dest.writeString(edited);
+        dest.writeString(eyeColor);
+        dest.writeStringList(films);
+        dest.writeString(gender);
+        dest.writeString(hairColor);
+        dest.writeString(height);
+        dest.writeString(homeworld);
+        dest.writeString(mass);
+        dest.writeString(name);
+        dest.writeString(skinColor);
+        dest.writeStringList(species);
+        dest.writeStringList(starships);
+        dest.writeString(url);
+        dest.writeStringList(vehicles);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Creature> CREATOR = new Creator<Creature>() {
+        @Override
+        public Creature createFromParcel(Parcel in) {
+            return new Creature(in);
+        }
+
+        @Override
+        public Creature[] newArray(int size) {
+            return new Creature[size];
+        }
+    };
 
     @Override
     public boolean equals(Object o) {
