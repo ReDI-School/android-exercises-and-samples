@@ -26,6 +26,7 @@
         <activity android:name=".intents.IntentsActivity" />
         <activity android:name=".intents.ExplicitIntentActivity" />
         <activity android:name=".network.PeopleActivity" />
+        <activity android:name=".network.CreatureActivity" />
 
         <service android:name=".services.ServiceDemo" />
         <service android:name=".services.IntentServiceDemo" />
